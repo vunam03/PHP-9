@@ -11,6 +11,7 @@
    <br> matkhau <input type="password" name="pass" size="15">
    <br> <input type="submit" name="submit" value="login" >
    </form>
+   
     <?php
         $tendangnhap= $_POST['user'];
         $matkhau= $_POST['pass'];
