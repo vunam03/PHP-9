@@ -1,0 +1,60 @@
+<?php
+session_start();
+include "../../sever/config/config.php";
+
+if (isset($_POST['login_email']) && isset($_POST['login_password'])){
+    function validate($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data =  htmlspecialchars($data);
+        return $data;
+    }
+    
+    
+
+    $email = validate($_POST['login_email']);
+    $password = validate($_POST['login_password']);
+    // Băm mât khẩu
+    $password_hash = password_hash($password, PASSWORD_DEFAULT); // Băm mk sd password_hash gán vào $password_hash
+    $sql = "INSERT INTO tbl_user (email, password) VALUES (?, ?)"; // Tạo câu truy vấn SQL để lưu trữ email 
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $password_hash);
+    mysqli_stmt_execute($stmt); // và mật khẩu đã được băm vào cơ sở dữ liệu.
+//
+    //Dong này đê thưc thi cau truy vấn SQL đã chuẩn bị
+    mysqli_stmt_execute($stmt);
+    // 
+    if (empty($email)){
+        header("Location: login.php?error=Chưa nhập tài khoản");
+        exit();
+    } else if(empty($password)){
+        header("Location: login.php?error=Chưa nhập mật khẩu");
+        exit();
+    } else {
+        $sql = "SELECT * FROM tbl_user WHERE email = '$email' AND password = '$password'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) === 1){
+            $row = mysqli_fetch_assoc($result);
+            // if ($row['email'] === $email && $row['password'] === $password){
+            if (password_verify($password, $row['password'])){ // kiểm tra mật khẩu có khớp với mk đã băm ko
+                $_SESSION['email'] = $row['email'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['id'] = $row['id'];
+                $user_id = $row['id'];
+                header("Location:../trangchu/dist/index.php?id=$user_id");
+                echo "loggin";
+            }
+            else {
+                header("Location: login.php?error=Tài khoản hoặc mật khẩu không đúng");
+                exit();
+            }
+        }
+        else {
+            header("Location: login.php?error=Tài khoản hoặc mật khẩu không đúng");
+            exit();
+        }
+    }
+} else {
+    header("Location: login.php");
+    exit();
+}
