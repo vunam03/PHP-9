@@ -1,0 +1,40 @@
+.sidebar {
+  background-color: #fffbef;
+
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: bisque cornsilk;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background-color: cornsilk;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgb(194, 132, 50);
+}
+
+.open,
+.container {
+  padding: 23px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.2rem;
+}
+
+.closed {
+  display: none;
+}
+
+.sidebar > h2 {
+  font-size: 1.6rem;
+  align-self: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}

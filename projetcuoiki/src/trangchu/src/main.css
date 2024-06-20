@@ -1,0 +1,261 @@
+/* NAVBAR */
+nav {
+  padding: 16px 14px;
+  background-color: #ffe794;
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+}
+
+.navMain {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.navIcon {
+  width: 70px;
+  height: auto;
+}
+
+.sidebarBtn {
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.sidebarBtn > img {
+  width: 40px;
+  height: auto;
+}
+
+.sidebarBtn:hover {
+  background-color: rgb(243, 186, 101);
+}
+
+.navTitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 32px;
+}
+
+/* MAIN */
+main {
+  height: 100%;
+  display: grid;
+}
+
+.sidebarOpen {
+  grid-template-columns: min(100%, 280px) 1fr;
+}
+
+.sidebarClosed {
+  grid-template-columns: 1fr;
+}
+
+.container {
+  background-color: #ffe1bd;
+  padding: 23px;
+}
+
+.container > * {
+  margin: 0 auto;
+  max-width: 102rem;
+  width: 100%;
+}
+
+#currentProjectTitle {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  font-size: 2rem;
+  text-align: center;
+
+  margin-bottom: 1rem;
+}
+
+#newItemBtn {
+  border-radius: 10px;
+  padding: 18px;
+
+  color: #353535;
+  background-color: #f8ca94;
+
+  font-size: 20px;
+  font-weight: 550;
+
+  box-shadow: 0 4px 6px #f5d0a6bd;
+}
+
+#newItemBtn:hover {
+  background-color: #dfbc95;
+}
+
+/* TODOS */
+.todos,
+.todoItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.todos {
+  gap: 1.5rem;
+}
+
+.done > .todoItem_title {
+  text-decoration: line-through;
+}
+
+.todoItem {
+  padding: 8px 5px 5px 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(139, 139, 139, 0.25);
+}
+
+.todoItem_title {
+  font-weight: 550;
+  font-size: 20px;
+  align-self: center;
+
+  margin-bottom: 4px;
+}
+
+.showTodoDetailsBtn {
+  background-color: #feffdf;
+  border-radius: 8px;
+  padding: 5px;
+
+  font-weight: 550;
+  font-size: 18px;
+}
+
+.showTodoDetailsBtn:hover {
+  background-color: #f6f7e8;
+}
+
+.priority_high {
+  background-color: #faa136;
+}
+
+.priority_med {
+  background-color: #ffb760;
+}
+
+.priority_low {
+  background-color: #ffd8a9;
+}
+
+/* DIALOG */
+dialog {
+  border: none;
+
+  background-color: rgba(88, 88, 88, 0.507);
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+dialog > form {
+  box-shadow: 1px 3px 10px rgba(49, 49, 49, 0.452);
+  resize: both;
+  overflow: hidden;
+
+  border-radius: 8px;
+  background-color: #ffd7a7;
+
+  width: min(98%, 40rem);
+  padding: 14px;
+}
+
+dialog * {
+  font-family: inherit;
+  font-size: medium;
+}
+
+dialog input {
+  background-color: transparent;
+  border-bottom: 2px solid rgb(95, 95, 95);
+}
+
+.dialogTitle {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+}
+
+.formInputFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #353535;
+  margin-bottom: 10px;
+}
+
+.formBtn {
+  border-radius: 8px;
+  width: 100%;
+  height: 2rem;
+  font-weight: bold;
+}
+
+.addTodoItemBtn {
+  background-color: lightgreen;
+}
+
+.addTodoItemBtn:hover {
+  background-color: rgb(132, 197, 132);
+}
+
+.selectItemPriority {
+  border: none;
+  background-color: #fbb45f;
+  padding: 5px 0;
+}
+
+.selectItemPriority:focus {
+  outline: none;
+}
+
+.saveBtn {
+  background-color: #7fdb88;
+  margin-bottom: 8px;
+}
+
+.statusBtn {
+  background-color: #7e8bf9;
+  margin-bottom: 8px;
+}
+
+.deleteBtn {
+  background-color: #ff5757;
+}
+
+.saveBtn:hover {
+  background-color: rgb(132, 197, 132);
+}
+
+.statusBtn:hover {
+  background-color: #7179c2;
+}
+
+.deleteBtn:hover {
+  background-color: #d45353;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebarClosed {
+    grid-template-columns: 1fr;
+  }
+
+  .open {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 80px);
+  }
+}

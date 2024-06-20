@@ -1,0 +1,58 @@
+#newProjectBtn {
+  color: white;
+  background-color: rgba(209, 198, 158, 0.7);
+  min-height: 50px;
+}
+
+.projectItem,
+#newProjectBtn {
+  box-shadow: 0 2px 8px rgba(205, 205, 205, 0.25);
+  border-radius: 8px;
+  font-size: 22px;
+}
+
+#newProjectBtn:hover {
+  background-color: rgba(165, 156, 125, 0.7);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.projectItem {
+  background-color: rgba(244, 208, 137, 0.4);
+  padding: 10px 10px;
+
+  width: 100%;
+  height: max-content;
+
+  display: flex;
+  align-items: center;
+}
+
+.projectTitle {
+  overflow: hidden;
+
+  border: none;
+  border-bottom: 1px dashed;
+
+  font-size: 18px;
+  color: #535151;
+  margin-left: auto;
+
+  cursor: text;
+}
+
+.projectTitle:focus {
+  outline: none;
+}
+
+.projectItem > img {
+  margin-left: auto;
+}
+
+.active {
+  background-color: rgba(244, 208, 137);
+}
