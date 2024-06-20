@@ -1,0 +1,131 @@
+.tieude{
+    color: var(--neutral-dark-1, #111);
+/* Headline 7/Bold */
+font-family: Poppins;
+font-size: 34px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 133.333% */
+padding-bottom: 30px;
+}
+
+.all{
+    display: flex;
+    padding: 32px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    border-radius: 16px;
+    background: #FFF;
+}
+
+html {
+    background-color: #FFE1BD;
+  } 
+
+.content_up{
+    display: flex;
+align-items: center;
+gap: 40px;
+}
+
+.box_img{
+    display: flex;
+width: 499px;
+padding: 0px 137px;
+align-items: flex-start;
+gap: 10px;
+}
+
+.box_inf{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 32px;
+}
+
+.box_input{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+}
+
+.p_1{
+    color: var(--neutral-light-2, #939393);
+/* Paragraph 3/Regular */
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+margin: 0px;
+}
+
+form>.box_input>input{
+    display: flex;
+padding: 16px;
+align-items: flex-start;
+gap: 8px;
+border-radius: 8px;
+border: 1px solid var(--neutral-light-3, #CBCBCB);
+background: #FFF;
+width: 500px;
+}
+.box_input_2{
+    display: flex;
+align-items: flex-start;
+gap: 23px;
+}
+form>.box_input_2>.box_dob_pn>input{
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+    width: 222px;
+    display: flex;
+padding: 16px;
+align-items: center;
+gap: 48px;
+border-radius: 8px;
+border: 1px solid var(--neutral-light-3, #CBCBCB);
+}
+
+.box_dob_pn{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 8px;
+}
+
+.gendercss{
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+    width: 252px;
+    display: flex;
+padding: 16px;
+align-items: center;
+gap: 48px;
+border-radius: 8px;
+border: 1px solid var(--neutral-light-3, #CBCBCB);
+}
+
+.button_box{
+    margin-top: 30px;
+    display: flex;
+
+align-items: flex-start;
+gap: 24px;
+}
+
+button{
+    display: flex;
+align-items: flex-start;
+gap: 21px;
+width: 150px;
+height: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 16px;
+}
