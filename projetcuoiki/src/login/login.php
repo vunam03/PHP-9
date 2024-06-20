@@ -36,6 +36,9 @@
             <a class="underlineHover" href="../Change_password/forgot_pass.php">Đổi mật khẩu</a>
             <!-- <a class="underlineHover" href="/Applications/XAMPP/xamppfiles/htdocs/src_project/Change_password/forgot_pass.php">Đổi mật khẩu</a> -->
           </div>
+          <div id ="formFooter">
+            <a href="#" class = "google"> <img src="../icon/icon_page1/img_signin.png" alt="" style="width: 65%"> </a>
+        </div>
       
         </div>
       </div>
