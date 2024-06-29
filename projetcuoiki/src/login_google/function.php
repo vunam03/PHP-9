@@ -2,14 +2,14 @@
 //Hàm login sau khi mạng xã hội trả dữ liệu về
 function loginFromSocialCallBack($socialUser) {
     include "../../sever/config/config.php";
-    $result = mysqli_query($con, "Select `id`,`name`,`email`,`fullname` from `user` WHERE `email` ='" . $socialUser['email'] . "'");
+    $result = mysqli_query($con, "Select `id`,`name`,`email` from `user` WHERE `email` ='" . $socialUser['email'] . "'");
     if ($result->num_rows == 0) {
-        $result = mysqli_query($con, "INSERT INTO `tbl_user` (`name`,`email`, `status`, `created_time`, `last_updated`) VALUES ('" . $socialUser['name'] . "', '" . $socialUser['email'] . "', 1, " . time() . ", '" . time() . "');");
+        $result = mysqli_query($con, "INSERT INTO `tbl_user` (`name`,`email`, `dob`, `created_time`, `last_updated`) VALUES ('" . $socialUser['name'] . "', '" . $socialUser['email'] . "', 1, " . time() . ", '" . time() . "');");
         if (!$result) {
             echo mysqli_error($con);
             exit;
         }
-        $result = mysqli_query($con, "Select `id`,`username`,`email`,`fullname` from `user` WHERE `email` ='" . $socialUser['email'] . "'");
+        $result = mysqli_query($con, "Select `id`,`name`,`email` from `user` WHERE `email` ='" . $socialUser['email'] . "'");
     }
     if ($result->num_rows > 0) {
         $user = mysqli_fetch_assoc($result);
