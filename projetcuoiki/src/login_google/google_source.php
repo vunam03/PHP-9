@@ -5,9 +5,9 @@ require_once ('./google/libraries/Google/autoload.php');
 
 //Insert your cient ID and secret 
 //You can get it from : https://console.developers.google.com/
-$client_id = '595616215334-b9s0s5j3j4bj5v4beme6i199neusok7l.apps.googleusercontent.com';
-$client_secret = 'ip6PkgZCrbzUH0I_hj4oQlzO';
-$redirect_uri = 'https://training.com/lesson-5/login.php';
+$client_id = '';
+$client_secret = '';
+$redirect_uri = '';
 
 //incase of logout request, just unset the session var
 //if (isset($_GET['logout'])) {
